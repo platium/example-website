@@ -5,7 +5,7 @@
       "hostname": "www",
       "template": "apache",
       "peer-criteria": "HTTP-GROUP",
-      "size": "MEDIUM"
+      "size": "MEDIUM",
       "port-mapping": [
         {
           "protocol": "http",
