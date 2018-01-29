@@ -1,0 +1,34 @@
+{
+  "name": "My-Website",
+  "description": "My static website",
+  "containers": [ {
+      "hostname": "www",
+      "template": "apache",
+      "peer-criteria": "HTTP-GROUP",
+      "size": "MEDIUM"
+      "port-mapping": [
+        {
+          "protocol": "http",
+          "domain": "mywebsite.env.subutai.cloud",
+          "internal-port": "80",
+          "external-port": "80"
+        },
+        {
+          "protocol": "tcp",
+          "domain": "mywebsite.env.subutai.cloud",
+          "internal-port": "22",
+          "external-port": "4040"
+        }
+      ]
+    }
+  ],
+  "peer-criteria": [ 
+    {
+      "name": "HTTP-GROUP",
+      "max-price": "5",
+      "avg-cpu-load": "50",
+      "min-free-ram": "128",
+      "min-free-disk-space": "10"
+    }
+  ]
+}
