@@ -9,13 +9,13 @@
       "port-mapping": [
         {
           "protocol": "http",
-          "domain": "mywebsite.env.subutai.cloud",
+          "domain": "mywebsite.envs.subutai.cloud",
           "internal-port": "80",
           "external-port": "80"
         },
         {
           "protocol": "tcp",
-          "domain": "mywebsite.env.subutai.cloud",
+          "domain": "mywebsite.envs.subutai.cloud",
           "internal-port": "22",
           "external-port": "4040"
         }
