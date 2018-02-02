@@ -1,7 +1,8 @@
 {
   "name": "My-Website",
   "description": "My static website",
-  "containers": [ {
+  "containers": [
+    {
       "hostname": "www",
       "template": "apache",
       "peer-criteria": "HTTP-GROUP",
@@ -9,20 +10,20 @@
       "port-mapping": [
         {
           "protocol": "http",
-          "domain": "mywebsite.envs.subutai.cloud",
+          "domain": "${domain}",
           "internal-port": "80",
           "external-port": "80"
         },
         {
           "protocol": "tcp",
-          "domain": "mywebsite.envs.subutai.cloud",
+          "domain": "${domain}",
           "internal-port": "22",
           "external-port": "4040"
         }
       ]
     }
   ],
-  "peer-criteria": [ 
+  "peer-criteria": [
     {
       "name": "HTTP-GROUP",
       "max-price": "5",
@@ -30,5 +31,13 @@
       "min-free-ram": "128",
       "min-free-disk-space": "10"
     }
-  ]
+  ],
+  "user-variables": {
+    "domain": {
+      "description": "Select your domain or create new one",
+      "type": "domain",
+      "default": "mattermost.envs.subutai.cloud",
+      "validation": "[a-zA-Z0-9.-]+"
+    }
+  }
 }
